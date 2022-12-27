@@ -1,0 +1,50 @@
+{
+  "name": "node_dev_lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev ./src/index.ts",
+    "lint": "eslint ./src ./test --ext .ts",
+    "lint:fix": "eslint ./src ./test --ext .ts --fix",
+    "start": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:functional": "jest --projects ./test --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukasVenancio/node_dev_lab.git"
+  },
+  "keywords": [
+    "node",
+    "typescript"
+  ],
+  "author": "Lukas S. Venancio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukasVenancio/node_dev_lab/issues"
+  },
+  "homepage": "https://github.com/LukasVenancio/node_dev_lab#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "@types/jest": "^29.2.4",
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^18.11.18",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.30.0",
+    "jest": "^29.3.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@overnightjs/core": "^1.7.6",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.2"
+  }
+}
