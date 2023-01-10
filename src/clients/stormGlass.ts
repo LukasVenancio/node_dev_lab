@@ -90,6 +90,7 @@ export class StormGlass {
       throw new ClientRequestError(JSON.stringify(err));
     }
   }
+
   private normalizeResponse(
     points: StormGlassForecastResponse
   ): ForecastPoint[] {
