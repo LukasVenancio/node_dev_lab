@@ -22,7 +22,7 @@ const schema = new mongoose.Schema(
     position: { type: String, required: true },
   },
   {
-    toJSON: {
+    toJSON: { 
       transform: (_, ret): void => {
         ret.id = ret._id;
         delete ret._id;

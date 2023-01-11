@@ -1,6 +1,7 @@
 import { Controller, Post } from '@overnightjs/core';
 import { Beach } from '@src/models/beaches';
 import { Request, Response } from 'express';
+import mongoose from 'mongoose';
 
 @Controller('beaches')
 export class BeachesController {
@@ -12,8 +13,13 @@ export class BeachesController {
       const result = await beach.save();
       res.status(201).send(result);
     } catch (error) {
-      const err = error as Error
-      res.status(422).send({error: err.message})
+      const err = error as mongoose.Error;
+
+      if (error instanceof mongoose.Error.ValidationError) {
+        res.status(422).send({ error: err.message });
+      }else{
+        res.status(500).send({error: 'Internal Server Error'});
+      }
     }
   }
 }
